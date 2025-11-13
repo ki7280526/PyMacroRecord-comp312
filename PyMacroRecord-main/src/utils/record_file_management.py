@@ -5,6 +5,7 @@ from tkinter import messagebox
 
 from utils import UserSettings
 from utils.warning_pop_up_save import confirm_save
+from utils.export_to_python import export_to_python, import_from_python
 
 
 class RecordFileManagement:
@@ -20,7 +21,7 @@ class RecordFileManagement:
             return
         self.main_app.prevent_record = True
         macroSaved = filedialog.asksaveasfile(
-            filetypes=[("PyMacroRecord Files", "*.pmr"), ("Json Files", "*.json")],
+            filetypes=[("PyMacroRecord Files", "*.pmr"), ("Json Files", "*.json"), ("Python Script", "*.py")],
             defaultextension=".pmr",
         )
         if macroSaved is not None:
@@ -45,11 +46,15 @@ class RecordFileManagement:
                     **macroSettings,
                     **self.main_app.macro.macro_events
                 }
-                if compactJson:
-                    json_macroEvents = dumps(macroData, separators=(',', ':'))
+                if self.main_app.current_file.endswith('.py'):
+                    export_to_python(macroData, self.main_app.current_file)
+                    print(f"Exported Python script to {self.main_app.current_file}")
                 else:
-                    json_macroEvents = dumps(macroData, indent=4)
-                current_file.write(json_macroEvents)
+                    if compactJson:
+                        json_macroEvents = dumps(macroData, separators=(',', ':'))
+                    else:
+                        json_macroEvents = dumps(macroData, indent=4)
+                    current_file.write(json_macroEvents)
         else:
             self.save_macro_as()
 
@@ -95,7 +100,6 @@ class RecordFileManagement:
                         self.main_app.settings.settings_dict["Minimization"] = macro_settings["Minimization"]
                         self.main_app.settings.settings_dict["After_Playback"] = macro_settings["After_Playback"]
         self.main_app.prevent_record = False
-
 
     def new_macro(self, event=None):
         if not self.main_app.macro_recorded or self.main_app.macro.playback:
