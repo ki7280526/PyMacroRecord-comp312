@@ -1,6 +1,6 @@
 # PyMacroRecord comp312
 
-**Team 7 Project** by Zahidul Jhonny, Jacoob Waang, and Jennifer Nambo
+**Team 7 Project** by Zahidul Jhonny, Jacob Waag, and Jennifer Nambo
 ## Our Goal/Mission Statement
 
 We wished to have more hands on experince working as a group to work on open source projects.  Which will give us an edge for any future prospects if we have in the future.
