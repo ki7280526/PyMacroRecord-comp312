@@ -6,6 +6,7 @@
 - **Enhanced Status Bar**: Extended to display repeat count and elapsed time during macro playback
 - **UI Improvements**: Added dark mode option and customizable visual themes
 - **Python Script Export**: Export macros as executable Python scripts for cross-machine compatibility and code transparency
+- **Python Script Export test code**: If the exporting feature doesn't work we added test_export.py test_import.py to make python files from the regular JSON files.
 - **Hindi Translation**: Added `hi.json` for Hindi language support (हिंदी भाषा समर्थन)
 - **MacOS Warning**: Added to help with MacOS machines to stop crashing
 
