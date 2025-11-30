@@ -4,9 +4,10 @@
 
 ## Features Implemented
 - **Enhanced Status Bar**: Extended to display repeat count and elapsed time during macro playback
-- **Python Script Export**: Export macros as executable Python scripts for cross-machine compatibility and code transparency
 - **UI Improvements**: Added dark mode option and customizable visual themes
+- **Python Script Export**: Export macros as executable Python scripts for cross-machine compatibility and code transparency
 - **Hindi Translation**: Added `hi.json` for Hindi language support (हिंदी भाषा समर्थन)
+- **MacOS Warning**: Added to help with MacOS machines to stop crashing
 
 ## Technical Journey
 Starting from brainstorming various AI-heavy projects, we ultimately selected PyMacroRecord for its practical utility and approachable codebase. The process of implementing our features, particularly the Python export functionality then challenged us with circular imports, environment setup, and maintaining compatibility with the existing architecture.
