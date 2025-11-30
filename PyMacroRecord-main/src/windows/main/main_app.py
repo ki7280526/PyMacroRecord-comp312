@@ -40,7 +40,7 @@ class MainApp(Window):
     """Main windows of the application"""
 
     def __init__(self):
-        super().__init__("PyMacroRecord", 350, 200)
+        super().__init__("PyMacroRecord", 600, 200)  # was 350, now 600
         self.attributes("-topmost", 1)
         if platform == "win32":
             pass
@@ -60,6 +60,8 @@ class MainApp(Window):
 
         self.menu = MenuBar(self)  # Menu Bar
         self.macro = Macro(self)
+        self.sidebar = Sidebar(self, self)#to make sidebar work 
+        self.sidebar.pack(side=LEFT, fill=Y)
 
         self.validate_cmd = self.register(self.validate_input)
 
