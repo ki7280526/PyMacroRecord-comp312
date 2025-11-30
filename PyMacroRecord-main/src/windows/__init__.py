@@ -4,3 +4,4 @@ from .options import *
 from .others import *
 from .popup import *
 from .window import *
+from .sidebar import Sidebar
