@@ -121,7 +121,7 @@ class MainApp(Window):
                     NewVerAvailable(self, self.version.new_version)
         self.mainloop()
 
-     def start_record(self):
+    def start_record(self):
         """Start recording (sidebar action)."""
         if not self.prevent_record:
             self.macro.start_record()
