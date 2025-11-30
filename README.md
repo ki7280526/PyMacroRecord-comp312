@@ -1,6 +1,11 @@
 # PyMacroRecord comp312
 
 **Team 7 Project** by Zahidul Jhonny, Jacoob Waang, and Jennifer Nambo
+## Our Goal/Mission Statement
+
+We wished to have more hands on experince working as a group to work on open source projects.  Which will give us an edge for any future prospects if we have in the future.
+To do so we worked on PyMacroRecord an open source project that makes Macros for automation for free.  Which will let us work on a project that's useful for everday life and something we can use in th future.
+While also being something that can hone our skills.
 
 ## Features Implemented
 - **Enhanced Status Bar**: Extended to display repeat count and elapsed time during macro playback
