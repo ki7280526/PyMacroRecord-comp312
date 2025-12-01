@@ -98,6 +98,23 @@ class MenuBar(Menu):
         self.others_sub.add_checkbutton(label=self.text_config["options_menu"]["others_menu"]["check_update_text"], variable=self.Check_update, command=lambda: settings.change_settings("Others", "Check_update"))
         self.others_sub.add_command(label=self.text_config["options_menu"]["others_menu"]["reset_settings_text"], command=settings.reset_settings)
         self.others_sub.add_command(label=self.text_config["options_menu"]["others_menu"]["fixed_timestamp_text"], command=lambda: Timestamp(self, parent))
+        
+        #Adding option for user in "others" sub section 
+        self.theme_choice = StringVar(value=userSettings["Others"].get("Theme", "Light"))
+        theme_dropdown = Menu(self.others_sub, tearoff=0)
+        theme_dropdown.add_radiobutton(
+            label= "Light",
+            value= "Light",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Light")
+        )
+        theme_dropdown.add_radiobutton(
+            label= "Dark",
+            value= "Dark",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Dark")
+        )
+        self.others_sub.add_cascade(label= "Theme", menu=theme_dropdown)
 
         # Help section
         self.help_section = Menu(my_menu, tearoff=0)
@@ -112,3 +129,9 @@ class MenuBar(Menu):
         my_menu.add_cascade(label=self.text_config["others_menu"]["others_text"], menu=self.other_section)
         self.other_section.add_command(label=self.text_config["others_menu"]["donors_text"], command=lambda: Donors(self, parent))
         self.other_section.add_command(label=self.text_config["others_menu"]["translators_text"], command=lambda: Translators(self, parent))
+    #settings for user updated for theme they choose 
+    def change_theme(self, theme_choice):
+        settings = self.master.settings
+        settings.change_settings("Others", "Theme", newValue=theme_choice)
+
+        self.master.apply_theme()
