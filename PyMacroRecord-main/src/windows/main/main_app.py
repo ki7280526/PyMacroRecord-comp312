@@ -24,6 +24,7 @@ from utils.theme_style import get as get_theme #importing styles
 from windows.main.menu_bar import MenuBar
 from windows.others.new_ver_avalaible import NewVerAvailable
 from windows.window import Window
+from windows.sidebar import Sidebar 
 
 if platform.lower() == "win32":
     from tkinter.ttk import *
@@ -40,7 +41,7 @@ class MainApp(Window):
     """Main windows of the application"""
 
     def __init__(self):
-        super().__init__("PyMacroRecord", 350, 200)
+        super().__init__("PyMacroRecord", 600, 200)  # was 350, now 600
         self.attributes("-topmost", 1)
         if platform == "win32":
             pass
@@ -60,6 +61,8 @@ class MainApp(Window):
 
         self.menu = MenuBar(self)  # Menu Bar
         self.macro = Macro(self)
+        self.sidebar = Sidebar(self, self)#to make sidebar work 
+        self.sidebar.pack(side=LEFT, fill=Y)
 
         self.validate_cmd = self.register(self.validate_input)
 
@@ -68,6 +71,8 @@ class MainApp(Window):
         self.status_text = Label(self, text='', relief=SUNKEN, anchor=W)
         if self.settings.settings_dict["Recordings"]["Show_Events_On_Status_Bar"]:
             self.status_text.pack(side=BOTTOM, fill=X)
+
+        
 
         # Main Buttons (Start record, stop record, start playback, stop playback)
 
@@ -120,6 +125,98 @@ class MainApp(Window):
         #will change theme. Placement for now.
         self.apply_theme()
         self.mainloop()
+
+    def start_record(self):
+        """Start recording (sidebar action)."""
+        if not self.prevent_record:
+            self.macro.start_record()
+
+    def stop_record(self):
+        """Stop recording or playback (sidebar action)."""
+        # Adjust to your Macro implementation
+        if hasattr(self.macro, "stop_record"):
+            self.macro.stop_record()
+        elif hasattr(self.macro, "stop"):
+            self.macro.stop()
+
+    def start_playback(self):
+        """Start playback (sidebar action)."""
+        self.macro.start_playback()
+
+    def open_macro(self):
+        """Open macro from file (sidebar action)."""
+        RecordFileManagement(self, self.menu).load_macro()
+
+    def save_macro(self):
+        """Save macro to file (sidebar action)."""
+        RecordFileManagement(self, self.menu).save_macro()
+
+    # ---- Playback options that reflect documented features ----
+    # Repetitions, speed, interval, for, schedule, after-playback [web:18][web:2]
+
+    def open_repetitions(self):
+        """Open repetitions/loop options (sidebar action)."""
+        # Call into your group’s repetitions UI if you have one
+        if hasattr(self.macro, "open_repetitions_window"):
+            self.macro.open_repetitions_window()
+
+    def open_speed_interval(self):
+        """Open speed options (sidebar action)."""
+        # If you have a dedicated speed dialog, call it here
+        if hasattr(self.macro, "open_speed_window"):
+            self.macro.open_speed_window()
+
+    def open_interval(self):
+        """Open interval playback options (sidebar action)."""
+        if hasattr(self.macro, "open_interval_window"):
+            self.macro.open_interval_window()
+
+    def open_for_loop(self):
+        """Open 'For' (duration-based loop) options (sidebar action)."""
+        if hasattr(self.macro, "open_for_window"):
+            self.macro.open_for_window()
+
+    def open_schedule(self):
+        """Open scheduling options (sidebar action)."""
+        if hasattr(self.macro, "open_schedule_window"):
+            self.macro.open_schedule_window()
+
+    def open_after_playback(self):
+        """Open after-playback actions window (sidebar action)."""
+        if hasattr(self.macro, "open_after_playback_window"):
+            self.macro.open_after_playback_window()
+
+    # ---- Hotkeys & settings ----
+
+    def open_hotkeys(self):
+        """Open hotkeys configuration (sidebar action)."""
+        # If your group added a specific hotkeys window, call that here;
+        # otherwise, fall back to whatever opens hotkeys in the menu.
+        if hasattr(self.hotkeyManager, "open_hotkeys_window"):
+            self.hotkeyManager.open_hotkeys_window()
+
+    def open_settings(self):
+        """Open general settings (sidebar action)."""
+        # Depending on your implementation, this might be in UserSettings or another window
+        if hasattr(self.settings, "open_settings_window"):
+            self.settings.open_settings_window()
+
+    # ---- Optional Info section hooks ----
+
+    def show_status_window(self):
+        """Example hook for 'Show status' button."""
+        # Implement or connect to any existing status/log window
+        pass
+
+    def show_about_window(self):
+        """Example hook for 'About' button."""
+        # If you already have an About window, call it here instead of pass
+        if hasattr(self, "about_window"):
+            try:
+                self.about_window.lift()
+            except Exception:
+                pass
+
 
     def load_language(self):
         self.lang = self.settings.settings_dict["Language"]

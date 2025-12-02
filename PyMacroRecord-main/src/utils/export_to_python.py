@@ -84,6 +84,7 @@ if __name__ == '__main__':
 
 def import_from_python(filename):
     """Parse Python script back to PyMacroRecord format (basic implementation)"""
-    # This is complex - would need full Python AST parsing
+    # This is complex - would need full Python AST parsing, as such will use this for now
     # For now, just notify it's not implemented
     raise NotImplementedError("Python import not yet implemented. Use JSON/PMR files for now.")
+
