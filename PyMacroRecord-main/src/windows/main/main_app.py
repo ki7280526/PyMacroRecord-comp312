@@ -180,8 +180,8 @@ class MainApp(Window):
         #Status bar
         try: 
             self.status_text.config(
-                background=theme["bg"],
-                foreground=theme["fg"]
+                background=theme.get("status_bg", theme["bg"]),
+                foreground=theme.get("status_fg", theme["fg"])
             )
         except Exception:
             pass
