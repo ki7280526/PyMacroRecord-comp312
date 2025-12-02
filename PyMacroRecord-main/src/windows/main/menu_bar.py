@@ -102,17 +102,54 @@ class MenuBar(Menu):
         #Adding option for user in "others" sub section 
         self.theme_choice = StringVar(value=userSettings["Others"].get("Theme", "Light"))
         theme_dropdown = Menu(self.others_sub, tearoff=0)
+        #Light theme option
         theme_dropdown.add_radiobutton(
             label= "Light",
             value= "Light",
             variable=self.theme_choice,
             command=lambda: self.change_theme("Light")
         )
+        #dark theme option
         theme_dropdown.add_radiobutton(
             label= "Dark",
             value= "Dark",
             variable=self.theme_choice,
             command=lambda: self.change_theme("Dark")
+        )
+        #Neon Noir theme option 
+        theme_dropdown.add_radiobutton(
+            label= "Neon Noir",
+            value= "Neon Noir",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Neon Noir")
+        )
+        #Space berries theme option
+        theme_dropdown.add_radiobutton(
+            label= "Space Berries",
+            value= "Space Berries",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Space Berries")
+        )
+        #Jolly theme option
+        theme_dropdown.add_radiobutton(
+            label= "Jolly",
+            value= "Jolly",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Jolly")
+        )
+        #Coffee theme option
+        theme_dropdown.add_radiobutton(
+            label= "Coffee",
+            value= "Coffee",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Coffee")
+        )
+        #Forest theme option
+        theme_dropdown.add_radiobutton(
+            label= "Forest",
+            value= "Forest",
+            variable=self.theme_choice,
+            command=lambda: self.change_theme("Forest")
         )
         self.others_sub.add_cascade(label= "Theme", menu=theme_dropdown)
 

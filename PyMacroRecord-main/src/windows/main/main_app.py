@@ -277,30 +277,11 @@ class MainApp(Window):
         #Status bar
         try: 
             self.status_text.config(
-                background=theme["bg"],
-                foreground=theme["fg"]
+                background=theme.get("status_bg", theme["bg"]),
+                foreground=theme.get("status_fg", theme["fg"])
             )
         except Exception:
             pass
         
-        #Buttons
-        try:
-            self.playBtn.config(
-                background=theme["button_bg"],
-                foreground=theme["button_fg"],
-                activebackground=theme["button_bg"],
-                activeforeground=theme["button_fg"],
-                bd=0
-            )
-
-            self.recordBtn.config(
-                background=theme["button_bg"],
-                foreground=theme["button_fg"],
-                activebackground=theme["button_bg"],
-                activeforeground=theme["button_fg"],
-                bd=0
-            )
-        except Exception:
-            pass
 
     
