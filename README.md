@@ -9,11 +9,11 @@ While also being something that can hone our skills.
 
 ## Features Implemented
 - **Enhanced Status Bar**: Extended to display repeat count and elapsed time during macro playback
-- **UI Improvements**: Added dark mode option and customizable visual themes
+- **UI Improvements**: Added light/dark mode option
 - **Python Script Export**: Export macros as executable Python scripts for cross-machine compatibility and code transparency
 - **Python Script Export test code**: If the exporting feature doesn't work we added test_export.py test_import.py to make python files from the regular JSON files.
-- **Hindi Translation**: Added `hi.json` for Hindi language support (हिंदी भाषा समर्थन)
-- **MacOS Warning**: Added to help with MacOS machines to stop crashing
+- **Hindi Translation**: Added `hi.json` for Hindi language support (हिंदी भाषा समर्थन) and expansion on supported languges
+- **MacOS Warning**: Added to help with MacOS accessibility permission instructions
 
 ## Technical Journey
 Starting from brainstorming various AI-heavy projects, we ultimately selected PyMacroRecord for its practical utility and approachable codebase. The process of implementing our features, particularly the Python export functionality then challenged us with circular imports, environment setup, and maintaining compatibility with the existing architecture.
