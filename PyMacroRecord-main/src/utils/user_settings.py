@@ -91,6 +91,7 @@ class UserSettings:
                 "Check_update": True,
                 "Fixed_timestamp": 0,
                 "Remind_new_ver_at": 0,
+                "Theme": "Light" #will be making Light mode default mode 
             }
         }
 
@@ -169,4 +170,6 @@ class UserSettings:
             userSettings["Loading"] = {}
             if "Always_import_macro_settings" not in userSettings["Loading"]:
                 userSettings["Loading"]["Always_import_macro_settings"] = False
+        if "Theme" not in userSettings["Others"]: #adding to check options
+            userSettings["Others"]["Theme"] = "Light"
         self.update_settings()

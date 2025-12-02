@@ -20,6 +20,7 @@ from utils.record_file_management import RecordFileManagement
 from utils.user_settings import UserSettings
 from utils.version import Version
 from utils.warning_pop_up_save import confirm_save
+from utils.theme_style import get as get_theme #importing styles
 from windows.main.menu_bar import MenuBar
 from windows.others.new_ver_avalaible import NewVerAvailable
 from windows.window import Window
@@ -121,6 +122,8 @@ class MainApp(Window):
             if self.version.new_version != "" and self.version.version != self.version.new_version:
                 if time() > self.settings.settings_dict["Others"]["Remind_new_ver_at"]:
                     NewVerAvailable(self, self.version.new_version)
+        #will change theme. Placement for now.
+        self.apply_theme()
         self.mainloop()
 
     def start_record(self):
@@ -257,3 +260,47 @@ class MainApp(Window):
         if platform.lower() == "linux":
             self.destroy()
         self.quit()
+    def apply_theme(self):
+        theme_option = self.settings.settings_dict["Others"].get("Theme", "Light")
+        theme = get_theme(theme_option)
+        #setting changes to window, frame, status bar, and buttons
+        #Window
+        try: 
+            self.config(bg=theme["bg"])
+        except Exception:
+            pass
+        #Frame
+        try: 
+            self.center_frame.config(bg=theme["bg"])
+        except Exception:
+            pass
+        #Status bar
+        try: 
+            self.status_text.config(
+                background=theme["bg"],
+                foreground=theme["fg"]
+            )
+        except Exception:
+            pass
+        
+        #Buttons
+        try:
+            self.playBtn.config(
+                background=theme["button_bg"],
+                foreground=theme["button_fg"],
+                activebackground=theme["button_bg"],
+                activeforeground=theme["button_fg"],
+                bd=0
+            )
+
+            self.recordBtn.config(
+                background=theme["button_bg"],
+                foreground=theme["button_fg"],
+                activebackground=theme["button_bg"],
+                activeforeground=theme["button_fg"],
+                bd=0
+            )
+        except Exception:
+            pass
+
+    
