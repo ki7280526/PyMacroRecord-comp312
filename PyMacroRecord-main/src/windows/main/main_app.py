@@ -186,24 +186,5 @@ class MainApp(Window):
         except Exception:
             pass
         
-        #Buttons
-        try:
-            self.playBtn.config(
-                background=theme["button_bg"],
-                foreground=theme["button_fg"],
-                activebackground=theme["button_bg"],
-                activeforeground=theme["button_fg"],
-                bd=0
-            )
-
-            self.recordBtn.config(
-                background=theme["button_bg"],
-                foreground=theme["button_fg"],
-                activebackground=theme["button_bg"],
-                activeforeground=theme["button_fg"],
-                bd=0
-            )
-        except Exception:
-            pass
 
     
