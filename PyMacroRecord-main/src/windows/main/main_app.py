@@ -263,17 +263,20 @@ class MainApp(Window):
     def apply_theme(self):
         theme_option = self.settings.settings_dict["Others"].get("Theme", "Light")
         theme = get_theme(theme_option)
+        
         #setting changes to window, frame, status bar, and buttons
         #Window
         try: 
             self.config(bg=theme["bg"])
         except Exception:
             pass
+
         #Frame
         try: 
             self.center_frame.config(bg=theme["bg"])
         except Exception:
             pass
+
         #Status bar
         try: 
             self.status_text.config(
@@ -282,6 +285,40 @@ class MainApp(Window):
             )
         except Exception:
             pass
+
+        #side bar
+        try:
+            self.sidebar.apply_theme(theme)
+        except Exception as e: 
+            print("Sidebar theme error", e)
+        
+        #buttons
+        self.playBtn.config(
+            bg=theme["button_bg"],
+            fg=theme["button_fg"],
+            activebackground=theme["button_bg"],
+            activeforeground=theme["button_fg"],
+            bd=0
+        )
+        self.recordBtn.config(
+            bg=theme["button_bg"],
+            fg=theme["button_fg"],
+            activebackground=theme["button_bg"],
+            activeforeground=theme["button_fg"],
+            bd=0
+        )
+
+        #Modificaton for Windows' menu bar
+        try: 
+            self.menu.config(
+                background=["bg"],
+                foreground=["fg"]
+            )
+        except: 
+            pass
+            
+
+
         
 
     

@@ -161,3 +161,71 @@ class Sidebar(tk.Frame):
             self.toggle_btn.config(text="⮜")
 
         self.update_idletasks()
+    #function for sidebar theme application 
+    def apply_theme(self, theme):
+        try:
+            #main bg 
+            self.config(bg=theme["sidebar_bg"])
+            self.content.config(bg=theme["sidebar_bg"])
+            
+            #Collapse/toggle 
+            self.toggle_btn.config(
+                bg=theme["sidebar_bg"],
+                fg=theme["sidebar_fg"],
+                activebackground=theme["sidebar_button_hover_bg"],
+                activeforeground=theme["sidebar_button_hover_fg"],
+            )
+
+            #Title (next to collapse)
+            self.title_lbl.config(
+                bg=theme["sidebar_bg"],
+                fg=theme["sidebar_fg"],
+            )
+            #applying to subwidgets using subwidgets_theme func.
+            self.subwidgets_theme(self, theme)
+        except Exception as e:
+            print("Theme error on sidebar", e)
+    #funtion for theme application on all widgets INSIDE the sidebar
+    def subwidgets_theme(self, widget, theme):
+        #frame 
+        if isinstance(widget, tk.Frame):
+            widget.config(bg=theme["sidebar_bg"])
+        
+        #labels 
+        elif isinstance(widget, tk.Label):
+            font_details= str(widget.cget("font"))
+            #headers/sections
+            if "bold" in font_details and "9" in font_details:
+                #headers/sections modifications
+                widget.config(
+                    bg=theme["sidebar_bg"],
+                    fg=theme["sidebar_section_fg"],              
+                )
+            else:
+                widget.config(
+                    bg=theme["sidebar_bg"],
+                    fg=theme["sidebar_fg"],
+                )
+        #Buttoms theme application
+        elif isinstance(widget, tk.Button):
+            widget.config(
+                bg= theme["sidebar_button_bg"],
+                fg= theme["sidebar_button_fg"],
+                activebackground= theme["sidebar_button_hover_bg"],
+                activeforeground= theme["sidebar_button_hover_fg"], 
+                borderwidth=0,
+                highlightthickness=0,
+                relief="flat",
+                takefocus=0
+            )
+        
+        #loop through subwidgets 
+        for subwidget in widget.winfo_children():
+            self.subwidgets_theme(subwidget, theme)
+
+
+
+
+
+
+
