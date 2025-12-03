@@ -14,6 +14,7 @@ While also being something that can hone our skills.
 - **Python Script Export test code**: If the exporting feature doesn't work we added test_export.py test_import.py to make python files from the regular JSON files.
 - **Hindi Translation**: Added `hi.json` for Hindi language support (हिंदी भाषा समर्थन) and overall expansion on supported languges
 - **MacOS Warning**: Added to help with MacOS accessibility permission instructions
+- - **Resizeable window**: You can change the window to any size you want, like changing sizes for a chrome tab for example.
 
 ## Technical Journey
 Starting from brainstorming various AI-heavy projects, we ultimately selected PyMacroRecord for its practical utility and approachable codebase. The process of implementing our features, particularly the Python export functionality then challenged us with circular imports, environment setup, and maintaining compatibility with the existing architecture.
