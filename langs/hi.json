@@ -1,0 +1,172 @@
+ 
+{
+  "information": {
+    "author": "jenn-nam",
+    "lang_short": "hi",
+    "lang_long": "Hindi"
+  },
+  "content": {
+    "global": {
+      "confirm_button": "पुष्टि करें",
+      "cancel_button": "रद्द करें",
+      "close_button": "बंद करें",
+      "error": "त्रुटि",
+      "previous_text": "पिछला",
+      "next_text": "अगला",
+      "confirm_save": "क्या आप अपना रिकॉर्ड सहेजना चाहते हैं?",
+      "confirm": "पुष्टि करें",
+      "information": "सूचना",
+      "restart_software_text": "परिवर्तन लागू करने के लिए आपको सॉफ़्टवेयर को पुनः प्रारंभ करना होगा।.",
+      "load_macro_settings": "मैक्रो सेटिंग्स भी आयात करें?"
+    },
+    "new_version": {
+      "title": "सॉफ़्टवेयर अपडेट",
+      "sub_text_1": "नया संस्करण",
+      "sub_text_2": "उपलब्ध!",
+      "sub_text_3": "क्या आप इसे अभी डाउनलोड करना चाहते हैं?",
+      "ignore_button": "अनदेखा करें",
+      "remind_later_button": "बाद में याद दिलाएं",
+      "download_button": "अपडेट डाउनलोड करें"
+    },
+    "file_menu": {
+      "file_text": "फ़ाइल",
+      "new_text": "नया",
+      "load_text": "लोड",
+      "save_text": "सहेजें",
+      "save_as_text": "इस रूप में सहेजें"
+    },
+    "options_menu": {
+      "options_text": "विकल्प",
+      "playback_menu": {
+        "playback_text": "प्लेबैक",
+        "speed_text": "गति",
+        "speed_settings": {
+          "title": "स्पीड सेटिंग्स",
+          "sub_text": "0.1 और 10 के बीच गति संख्या दर्ज करें",
+          "error_new_value": "आपकी स्पीड मान 0.1 और 10 के बीच होनी चाहिए!"
+        },
+        "repeat_text": "दोहराएं",
+        "repeat_settings": {
+          "title": "दोहराने की सेटिंग्स",
+          "infinite_repeat": "अनंत दोहराव?",
+          "sub_text": "दोहराव संख्या दर्ज करें",
+          "error_new_value": "आप 1 पुनरावृत्ति से कम नहीं कर सकते।."
+        },
+        "for_text": "के लिए",
+        "for_settings": {
+          "title": "सेटिंग्स के लिए"
+        },
+        "interval_text": "अंतराल",
+        "interval_settings": {
+          "title": "अंतराल सेटिंग्स"
+        },
+        "for_interval_settings": {
+          "hours_text": "घंटे",
+          "minutes_text": "मिनट",
+          "seconds_text": "सेकंड्स",
+          "error_new_value_multiple": "इनपुट गलत हैं",
+          "error_new_value_single": "इनपुट गलत है"
+        },
+        "scheduled_text": "अनुसूचित",
+        "scheduled_settings": {
+          "title": "निर्धारित सेटिंग्स"
+        },
+        "delay_text": "विलंब",
+        "delay_settings": {
+          "title": "विलंब सेटिंग्स",
+          "sub_text": "दोहराव के बीच देरी दर्ज करें",
+          "error_new_value": "आप 0 से कम विलंब नहीं कर सकते."
+        }
+      },
+      "recordings_menu": {
+        "recordings_text": "रिकॉर्डिंग्स",
+        "mouse_movement_text": "माउस मूवमेंट",
+        "mouse_click_text": "माउस क्लिक",
+        "keyboard_text": "कीबोर्ड",
+        "show_events_statut": "स्टेटस बार पर इवेंट्स दिखाएं"
+      },
+      "json_compact": "संकुचित मैक्रो डेटा",
+      "settings_menu": {
+        "settings_text": "सेटिंग्स",
+        "always_import_macro_settings": "हमेशा मैक्रो सेटिंग्स आयात करें",
+        "lang_text": "भाषा",
+        "lang_settings": {
+          "title": "भाषा सेटिंग्स",
+          "sub_text": "अपनी भाषा चुनें"
+        },
+        "hotkeys_text": "हॉटकीज",
+        "hotkeys_settings": {
+          "title": "हॉटकिज़ सेटिंग्स",
+          "start_record_text": "रिकॉर्ड शुरू करें",
+          "stop_record_text": "रिकॉर्ड बंद करें",
+          "start_playback_text": "प्लेबैक शुरू करें",
+          "stop_playback_text": "प्लेबैक रोकें",
+          "clear_text": "साफ",
+          "please_key_text": "कृपया कुंजी",
+          "error_hotkeys": "आप रिकॉर्डिंग शुरू करने और प्लेबैक शुरू करने के लिए एक ही हॉटकी नहीं रख सकते"
+        },
+        "minimization_text": "लघुकरण",
+        "minimization_toast": "PyMacroRecord को न्यूनतम कर दिया गया है.",
+        "minimization_menu": {
+          "minimization_when_playing_text": "खेलते समय न्यूनतमकरण",
+          "minimization_when_recording_text": "रिकॉर्डिंग के समय न्यूनतमकरण"
+        },
+        "after_playback_text": "प्लेबैक के बाद",
+        "after_playback_settings": {
+          "when_playback_complete_text": "प्लेबैक पूरा होने के बाद",
+          "title": "प्लेबैक सेटिंग्स के बाद",
+          "sub_text": "प्लेबैक पूरा होने पर",
+          "idle": "निष्क्रिय",
+          "quit software": "सॉफ़्टवेयर छोड़ें",
+          "standby": "तैयार रहें",
+          "log off computer": "कंप्यूटर से लॉग ऑफ करें",
+          "turn off computer": "कंप्यूटर बंद करें",
+          "restart computer": "कंप्यूटर पुनः प्रारंभ करें",
+          "hibernate (if enabled)": "हाइबरनेट (यदि सक्षम किया गया है)"
+        }
+      },
+      "others_menu": {
+        "others_text": "अन्य",
+        "check_update_text": "अपडेट जांचें",
+        "reset_settings_text": "सेटिंग्स रीसेट करें",
+        "reset_settings_confirmation": "क्या आप वाकई अपनी सेटिंग्स रीसेट करना चाहते हैं?",
+        "fixed_timestamp_text": "स्थिर टाइमस्टैम्प",
+        "fixed_timestamp_settings": {
+          "title": "निर्धारित टाइमस्टैम्प सेटिंग्स",
+          "sub_text": "नियत समय दर्ज करें"
+        }
+      }
+    },
+    "help_menu": {
+      "help_text": "मदद",
+      "tutorial_text": "ट्यूटोरियल",
+      "about_text": "के बारे में",
+      "website_text": "वेबसाइट",
+      "about_settings": {
+        "title": "के बारे में",
+        "publisher_text": "प्रकाशक",
+        "version_text": "संस्करण",
+        "license_text": "लाइसेंस के तहत",
+        "version_check_update_text": {
+          "up_to_date": "अप टू डेट",
+          "outdated": "पुराना",
+          "disabled": "अपडेट जांच अक्षम है",
+          "failed": "यदि नया अपडेट है तो प्राप्त नहीं कर सकता"
+        }
+      }
+    },
+    "others_menu": {
+      "others_text": "अन्य",
+      "donors_text": "दानदाता",
+      "donors_settings": {
+        "title": "दानदाता",
+        "sub_text": "सभी दानदाता"
+      },
+      "translators_text": "अनुवादक",
+      "translators_settings": {
+        "title": "अनुवादक",
+        "sub_text": "सभी अनुवादक"
+      }
+    }
+  }
+}
